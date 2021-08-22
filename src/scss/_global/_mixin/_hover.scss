@@ -1,0 +1,25 @@
+// :hover, :focus, :activeの疑似クラスを一括設定
+// @param {Boolean} $_hover  - :hoverのセレクタの有効／無効
+// @param {Boolean} $_focus  - :focusのセレクタの有効／無効
+// @param {Boolean} $_active - :activeのセレクタの有効／無効
+// ---------------------------------------------------------------------------
+
+@mixin hover($_hover: true, $_active: false, $_focus: true) {
+  $_pseudoBind: ();
+
+  @if $_hover {
+    $_pseudoBind: append($_pseudoBind, '&:hover', comma);
+  }
+
+  @if $_active {
+    $_pseudoBind: append($_pseudoBind, '&:active', comma);
+  }
+
+  @if $_focus {
+    $_pseudoBind: append($_pseudoBind, '&:focus', comma);
+  }
+
+  #{$_pseudoBind} {
+    @content;
+  }
+}

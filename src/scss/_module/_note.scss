@@ -1,0 +1,18 @@
+@use '../_global';
+
+.m-note {
+  @extend %module-margin;
+  @include global.font-size(12);
+  color: global.$COLOR_NOTE;
+
+  &_text {
+
+    & + & {
+      @extend %module-margin;
+    }
+  }
+
+  @include global.media-query {
+    @include global.font-size(14);
+  }
+}

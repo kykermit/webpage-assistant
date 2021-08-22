@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<%- include(`${process.cwd()}/src/ejs/include/_meta`) %>
+<%- include(`${process.cwd()}/src/ejs/include/_assets`) %>
+</head>
+
+<body>
+<div class="l-page">
+<%- include(`${process.cwd()}/src/ejs/include/_header`) -%>
+<%- include(`${process.cwd()}/src/ejs/include/_nav`) -%>
+
+<main class="l-main">
+<div class="l-main_inner">
+<%- contents %>
+<%- include(`${process.cwd()}/src/ejs/include/_navtop`) %>
+</div>
+</main>
+
+<%- include(`${process.cwd()}/src/ejs/include/_footer`) %>
+</div>
+</body>
+</html>

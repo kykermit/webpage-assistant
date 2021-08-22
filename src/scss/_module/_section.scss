@@ -1,0 +1,19 @@
+@use '../_global';
+
+.m-section {
+  @extend %layout-inner;
+  margin-top: 50px;
+
+  + .m-section {
+    border-top: 1px solid global.$COLOR_BORDER;
+    padding-top: 50px;
+  }
+
+  @include global.media-query {
+    margin-top: 70px;
+
+    + .m-section {
+      padding-top: 70px;
+    }
+  }
+}

@@ -1,0 +1,151 @@
+---
+layout: default
+title: Webpage assistant
+meta:
+  description:
+  keyword:
+canonical:
+---
+
+<div class="m-heading-lv1">
+<h1 class="m-heading-lv1_text"><span class="m-heading-lv1_subtext">Webページを操作する簡易バーチャルアシスタント</span>Webpage assistant</h1>
+</div>
+
+<section class="m-section">
+
+<div class="m-heading-lv2" id="whatis">
+<h2 class="m-heading-lv2_text">Webpage assistantとは</h2>
+</div>
+
+<div class="m-paragraph">
+<p class="m-paragraph_text">LINEボットにメッセージを投稿すると、メッセージの内容に応答してWebページを操作してくれる簡易バーチャルアシスタントです。<br>
+ナビゲーションを開いたり、画面をスクロール移動させたり、自分がブラウザを直接操作しなくても簡単なメッセージでバーチャルアシスタントが代わりにブラウザを操作してくれます。</p>
+</div>
+
+</section>
+
+<section class="m-section">
+
+<div class="m-heading-lv2" id="features">
+<h2 class="m-heading-lv2_text">Webpage assistantの役割</h2>
+</div>
+
+<div class="m-list-bullet">
+<ul class="m-list-bullet_list">
+<li><span>LINEのチャットから指示を受けるとWebページでアクションを実行します</span></li>
+<li><span>実行したアクションをWebページにアラート表示します</span></li>
+<li><span>アクションの実行結果をLINEのチャットにお知らせします</span></li>
+</ul>
+</div>
+
+</section>
+
+<section class="m-section">
+
+<div class="m-heading-lv2" id="usage">
+<h2 class="m-heading-lv2_text">使い方</h2>
+</div>
+
+<div class="m-note">
+<p class="m-note_text">Node.jsおよびnpmがインストールされていること、LINEボットが作成されていることを前提としています。</p>
+</div>
+
+<div class="m-list-number">
+<ol class="m-list-number_list">
+<li><span>src/ts/core/config.ts にボットサーバーのエンドポイントのURLを設定します</li>
+<li><span><code class="m-code-inline">npm i</code>を実行し、npmパッケージをインストールします</span></li>
+<li><span><code class="m-code-inline">npm start</code>を実行し、Webページを表示します（いま表示しているページです）</span></li>
+<li><span>LINEのチャットに特定のコマンド（メッセージ）を投稿するとWebページ側でアクションが実行されます</span></li>
+</ol>
+</div>
+
+<div class="m-list-description">
+<dl class="m-list-description_list">
+<div class="m-list-description_item">
+<dt>コマンド例</dt>
+<dd><pre class="m-code-inline"><code>open</code></pre></dd>
+</div>
+</dl>
+</div>
+
+</section>
+
+<section class="m-section">
+
+<div class="m-heading-lv2" id="command">
+<h2 class="m-heading-lv2_text">コマンド一覧</h2>
+</div>
+
+<div class="m-paragraph">
+<p class="m-paragraph_text">Webpage assistantが応答できるメッセージは下記の5つです。<br>
+それ以外のメッセージはコマンドとして認識せず「アクションの実行に失敗しました。」というメッセージを返します。</p>
+</div>
+
+<div class="m-table">
+<table class="m-table_table">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>アクション</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>open</th>
+<td>ナビゲーションを開きます。<br>
+既にナビゲーションが開いている場合は、アクションを実行しません。</td>
+</tr>
+<tr>
+<th>close</th>
+<td>ナビゲーションを閉じます。<br>
+既にナビゲーションが閉じている場合は、アクションを実行しません。</td>
+</tr>
+<tr>
+<th>top</th>
+<td>ページ最上部までスクロールします。<br>
+既にページ最上部までスクロールしている場合は、アクションを実行しません。</td>
+</tr>
+<tr>
+<th>up</th>
+<td>上方向にスクロールします。<br>
+既にページ最上部までスクロールしている場合は、アクションを実行しません。</td>
+</tr>
+<tr>
+<th>down</th>
+<td>下方向にスクロールします。<br>
+既にページ最下部までスクロールしている場合は、アクションを実行しません。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section class="m-section">
+
+<div class="m-heading-lv2" id="environment">
+<h2 class="m-heading-lv2_text">動作環境</h2>
+</div>
+
+<div class="m-list-description">
+<dl class="m-list-description_list">
+<div class="m-list-description_item">
+<dt>ブラウザ</dt>
+<dd>Google Chrome 最新版</dd>
+</div>
+<div class="m-list-description_item">
+<dt>Node.js / npmの推奨バージョン</dt>
+<dd>16.x / 7.x</dd>
+</div>
+</dl>
+</div>
+
+</section>
+
+<template id="assistant-alert" class="js-alert-toast">
+<div class="alert-toast"></div>
+</template>

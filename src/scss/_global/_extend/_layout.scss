@@ -1,0 +1,26 @@
+@use '../_mixin';
+@use '../var';
+
+%layout-padding {
+  padding-left: var.$CONTENT_GUTTER_NARROW;
+  padding-right: var.$CONTENT_GUTTER_NARROW;
+
+  @include mixin.media-query {
+    padding-left: var.$CONTENT_GUTTER_WIDE;
+    padding-right: var.$CONTENT_GUTTER_WIDE;
+  }
+}
+
+%layout-center {
+  max-width: var.$CONTENT_WIDTH_MAX;
+  min-width: var.$CONTENT_WIDTH_MIN;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%layout-inner {
+
+  > :first-child {
+    margin-top: 0 !important;
+  }
+}

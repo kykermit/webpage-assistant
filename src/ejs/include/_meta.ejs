@@ -1,0 +1,10 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<% if (file.frontMatter.meta.description) { -%>
+<meta name="description" content="<%= file.frontMatter.meta.description -%>">
+<% } -%>
+<% if (file.frontMatter.meta.keyword) { -%>
+<meta name="keywords" content="<%= file.frontMatter.meta.description -%>">
+<% } -%>
+<title><%= file.frontMatter.title -%></title>

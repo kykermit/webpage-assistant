@@ -1,0 +1,42 @@
+@use '../_global';
+
+.slide-nav-content {
+  @include global.media-query(below) {
+    @include global.transition((height, padding));
+    overflow: hidden;
+  }
+
+  &:not(.is-slide-nav-show) {
+    display: none;
+  }
+
+  @include global.media-query {
+    @include global.transition((width, padding));
+
+    .js-slide-nav_sticky {
+      @include global.transition((opacity, transform));
+    }
+
+    &:not(.is-slide-nav-transition) {
+
+      .js-slide-nav_sticky {
+        top: 45px !important;
+      }
+    }
+
+    &.is-slide-nav-transition {
+      overflow: hidden;
+
+      .js-slide-nav_sticky {
+        opacity: 0;
+      }
+
+      &.is-slide-nav-show {
+
+        .js-slide-nav_sticky {
+          transform: translateY(5%);
+        }
+      }
+    }
+  }
+}

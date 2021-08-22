@@ -1,0 +1,42 @@
+@use '../_global';
+
+.m-heading-lv1 {
+  @extend %layout-padding;
+  @extend %module-margin;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
+  background-image: linear-gradient(rgba(global.$COLOR_BACKGROUND_HERO, .6) 0%, global.$COLOR_BACKGROUND_HERO 100%);
+  margin-left: -#{global.$CONTENT_GUTTER_NARROW};
+  margin-right: -#{global.$CONTENT_GUTTER_NARROW};
+  margin-bottom: 80px;
+
+  &_text {
+    @extend %layout-center;
+    @include global.font-size(40);
+    font-weight: bold;
+    color: global.$COLOR_HEADING;
+  }
+
+  &_subtext {
+    @include global.font-size(28);
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  @include global.media-query {
+    margin-left: -#{global.$CONTENT_GUTTER_WIDE};
+    margin-right: -#{global.$CONTENT_GUTTER_WIDE};
+    margin-bottom: 100px;
+  }
+}
+
+.m-heading-lv2 {
+  @extend %module-margin;
+
+  &_text {
+    @include global.font-size(24);
+    font-weight: bold;
+    color: global.$COLOR_HEADING;
+  }
+}

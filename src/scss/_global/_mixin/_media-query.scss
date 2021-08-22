@@ -1,0 +1,33 @@
+@use '../var';
+
+// メディアクエリを設定
+// @param {String} $_range          - メディアクエリのサポート範囲（below | above | between）
+// @param {Number} $_breakpoint     - ブレークポイント（単位つき）
+// @param {Number} $_breakpoint-min - $_range: betweenの際のブレークポイントの下限（単位つき）
+// @param {Number} $_breakpoint-max - $_range: betweenの際のブレークポイントの上限（単位つき）
+// ---------------------------------------------------------------------------
+
+@mixin media-query(
+  $_range:            above,
+  $_breakpoint:       var.$BREAKPOINT,
+  $_breakpoint-min:   null,
+  $_breakpoint-max:   null
+) {
+  @if $_range == below {
+    @media (max-width: $_breakpoint - 1px) {
+      @content;
+    }
+  }
+
+  @else if $_range == above {
+    @media screen and (min-width: $_breakpoint) {
+      @content;
+    }
+  }
+
+  @else if $_range == between {
+    @media (min-width: $_breakpoint-min) and (max-width: $_breakpoint-max - 1px) {
+      @content;
+    }
+  }
+}

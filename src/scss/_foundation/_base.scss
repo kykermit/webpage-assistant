@@ -1,0 +1,132 @@
+@use '../_global';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+dl,
+dt,
+dd,
+figure,
+figcaption,
+fieldset,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+picture,
+img,
+iframe,
+embed,
+object,
+video,
+fieldset,
+button {
+  border: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: global.$FONT_SIZE_NARROW;
+  background-color: global.$COLOR_BACKGROUND;
+  color: global.$COLOR_TEXT;
+  font-family: global.$FONT_FAMILY;
+  line-height: global.$LINE_HEIGHT;
+
+  @include global.media-query {
+    font-size: global.$FONT_SIZE_WIDE;
+  }
+}
+
+li,
+dt,
+dd {
+  list-style: none;
+}
+
+figure,
+figcaption {
+  display: block;
+}
+
+em,
+strong,
+b {
+  font-style: normal;
+  font-weight: bold;
+}
+
+sub,
+sup {
+  bottom: -.2em;
+}
+
+dfn {
+  font-style: normal;
+}
+
+a {
+  color: global.$COLOR_LINK;
+  text-decoration: none;
+
+  @include global.hover {
+    text-decoration: underline;
+  }
+}
+
+iframe {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+label {
+  cursor: pointer;
+}
+
+input {
+
+  &::-ms-clear {
+    visibility: hidden;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+select {
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+textarea {
+  overflow-x: hidden; // IE
+  overflow-y: auto;   // IE
+  resize: vertical;
+}
+
+input,
+button,
+select,
+textarea,
+[role='button'] {
+  @include global.font-size(16);
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,12 @@
+@use '../_global';
+
+.m-paragraph {
+  @extend %module-margin;
+
+  &_text {
+
+    & + & {
+      @extend %module-margin;
+    }
+  }
+}

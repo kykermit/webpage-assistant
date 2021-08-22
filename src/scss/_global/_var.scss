@@ -1,0 +1,91 @@
+// ウィンドウ幅がコンテンツ幅以下時の左右の余白（margin）
+// ---------------------------------------------
+
+$CONTENT_GUTTER_NARROW: 15px;
+$CONTENT_GUTTER_WIDE: 25px;
+
+// モジュール共通の余白（margin-top）
+// ---------------------------------------------
+
+$MODULE_GUTTER_NARROW: 10px;
+$MODULE_GUTTER_WIDE: 20px;
+
+// メディアクエリ
+// ---------------------------------------------
+
+$BREAKPOINT: 768px;
+$CONTENT_WIDTH_MIN: 320px;
+$CONTENT_WIDTH_MAX: 960px;
+
+// font-family
+// ---------------------------------------------
+
+$FONT_FAMILY: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+
+// font-size
+// ---------------------------------------------
+
+$FONT_SIZE_NARROW: 1.4rem;
+$FONT_SIZE_WIDE: 1.6rem;
+
+// line-height
+// ---------------------------------------------
+
+$LINE_HEIGHT_HEADING: 1.4;
+$LINE_HEIGHT: 1.6;
+
+// color
+// ---------------------------------------------
+
+$COLOR_CODE_BLACK: #000;
+$COLOR_CODE_WHITE: #fff;
+$COLOR_CODE_1: #006d80;
+$COLOR_CODE_2: #14293c;
+$COLOR_CODE_3: #f7f7f7;
+$COLOR_CODE_4: #ececec;
+$COLOR_CODE_5: #666;
+$COLOR_CODE_6: #0b66c0;
+$COLOR_CODE_7: #ecf6f8;
+$COLOR_CODE_8: #333;
+$COLOR_CODE_9: #ee5d42;
+$COLOR_CODE_10: #fee5e0;
+
+$COLOR_TEXT: $COLOR_CODE_8;
+$COLOR_TEXT_INVERSION: $COLOR_CODE_WHITE;
+$COLOR_BACKGROUND: $COLOR_CODE_WHITE;
+$COLOR_BACKGROUND_HEADER: $COLOR_CODE_1;
+$COLOR_BACKGROUND_NAV: $COLOR_CODE_3;
+$COLOR_BACKGROUND_FOOTER: $COLOR_CODE_2;
+$COLOR_BACKGROUND_ALERT: $COLOR_CODE_2;
+$COLOR_BACKGROUND_HERO: $COLOR_CODE_7;
+$COLOR_BACKGROUND_CODE: $COLOR_CODE_4;
+$COLOR_HEADING: $COLOR_CODE_1;
+$COLOR_BORDER: $COLOR_CODE_4;
+$COLOR_BUTTON: $COLOR_CODE_1;
+$COLOR_NOTE: $COLOR_CODE_5;
+$COLOR_LINK: $COLOR_CODE_6;
+$COLOR_TABLE_HEAD: $COLOR_CODE_7;
+$COLOR_MENTION: $COLOR_CODE_9;
+$COLOR_MENTION_UNDERLINE: $COLOR_CODE_10;
+
+// opacity
+// ---------------------------------------------
+
+$OPACITY: .5;
+
+// border-radius
+// ---------------------------------------------
+
+$BORDER_RADIUS: 5px;
+
+// transition
+// ---------------------------------------------
+
+$TRANSITION_DURATION: .5s;
+$TRANSITION_TIMING_FUNCTION: cubic-bezier(.25, .8, .25, 1);
+
+// z-index
+// ---------------------------------------------
+
+$Z-INDEX_HEADER: 200;
+$Z-INDEX_NAV: 100;

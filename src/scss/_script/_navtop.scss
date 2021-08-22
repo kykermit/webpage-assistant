@@ -1,0 +1,10 @@
+@use '../_global';
+
+.js-navtop {
+  @include global.transition(opacity);
+  opacity: 0;
+
+  &.is-effect-actvie {
+    opacity: 1;
+  }
+}

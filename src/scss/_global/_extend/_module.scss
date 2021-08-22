@@ -1,0 +1,12 @@
+@use '../_mixin';
+@use '../var';
+
+// 汎用モジュールの共通マージン
+// ---------------------------------------------------------------------------
+%module-margin {
+  margin-top: var.$MODULE_GUTTER_NARROW;
+
+  @include mixin.media-query {
+    margin-top: var.$MODULE_GUTTER_WIDE;
+  }
+}

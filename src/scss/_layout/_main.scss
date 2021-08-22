@@ -1,0 +1,10 @@
+@use '../_global';
+
+.l-main {
+  @extend %layout-padding;
+
+  &_inner {
+    @extend %layout-inner;
+    padding-bottom: 20px;
+  }
+}

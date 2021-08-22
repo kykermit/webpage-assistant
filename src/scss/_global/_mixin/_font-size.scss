@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+// pxの単位をremに変換
+// @param {Number}  $_size        - 設定したフォントサイズ（単位なし）
+// @param {Number}  $_root        - ルートのフォントサイズ（単位なし）
+// @param {Boolean} $_isImportant - !importantルールの有無
+// ---------------------------------------------------------------------------
+
+@mixin font-size($_size: 16, $_root: 10, $_isImportant: false) {
+  @if $_isImportant {
+    font-size: #{math.div($_size, $_root)}rem !important;
+  }
+
+  @else {
+    font-size: #{math.div($_size, $_root)}rem;
+  }
+}

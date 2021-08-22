@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Webpage assistant</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style/common.css">
+<noscript><link rel="stylesheet" href="/style/noscript.css"></noscript>
+<script src="/script/common.js" defer></script>
+
+</head>
+
+<body>
+<div class="l-page">
+<header class="l-header">
+<div class="l-header_inner">
+<div class="header-logo"><a href="/">Webpage assistant</a></div>
+<button type="button" class="nav-button js-slide-nav" aria-controls="slide-nav"><span class="js-slide-nav_text">ナビゲーションを開く</span></button>
+</div>
+</header>
+<nav class="l-nav slide-nav-content" id="slide-nav">
+<div class="l-nav_inner js-slide-nav_sticky">
+<div class="nav-topic">
+<ul class="nav-topic_list">
+<li><a href="#whatis" class="js-scroll">Webpage assistantとは</a></li>
+<li><a href="#features" class="js-scroll">特長</a></li>
+<li><a href="#usage" class="js-scroll">使い方</a></li>
+<li><a href="#command" class="js-scroll">コマンド一覧</a></li>
+<li><a href="#environment" class="js-scroll">動作環境</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<main class="l-main">
+<div class="l-main_inner">
+
+<div class="m-heading-lv1">
+<h1 class="m-heading-lv1_text"><span class="m-heading-lv1_subtext">Webページを操作する簡易バーチャルアシスタント</span>Webpage assistant</h1>
+</div>
+
+<section class="m-section">
+
+<div class="m-heading-lv2" id="whatis">
+<h2 class="m-heading-lv2_text">Webpage assistantとは</h2>
+</div>
+
+<div class="m-paragraph">
+<p class="m-paragraph_text">LINEボットにメッセージを投稿すると、メッセージの内容に応答してWebページを操作してくれる簡易バーチャルアシスタントです。<br>
+ナビゲーションを開いたり、画面をスクロール移動させたり、自分がブラウザを直接操作しなくても簡単なメッセージでバーチャルアシスタントが代わりにブラウザを操作してくれます。</p>
+</div>
+
+</section>
+
+<section class="m-section">
+
+<div class="m-heading-lv2" id="features">
+<h2 class="m-heading-lv2_text">Webpage assistantの役割</h2>
+</div>
+
+<div class="m-list-bullet">
+<ul class="m-list-bullet_list">
+<li><span>LINEのチャットから指示を受けるとWebページでアクションを実行します</span></li>
+<li><span>実行したアクションをWebページにアラート表示します</span></li>
+<li><span>アクションの実行結果をLINEのチャットにお知らせします</span></li>
+</ul>
+</div>
+
+</section>
+
+<section class="m-section">
+
+<div class="m-heading-lv2" id="usage">
+<h2 class="m-heading-lv2_text">使い方</h2>
+</div>
+
+<div class="m-note">
+<p class="m-note_text">Node.jsおよびnpmがインストールされていること、LINEボットが作成されていることを前提としています。</p>
+</div>
+
+<div class="m-list-number">
+<ol class="m-list-number_list">
+<li><span>src/ts/core/config.ts にボットサーバーのエンドポイントのURLを設定します</li>
+<li><span><code class="m-code-inline">npm i</code>を実行し、npmパッケージをインストールします</span></li>
+<li><span><code class="m-code-inline">npm start</code>を実行し、Webページを表示します（いま表示しているページです）</span></li>
+<li><span>LINEのチャットに特定のコマンド（メッセージ）を投稿するとWebページ側でアクションが実行されます</span></li>
+</ol>
+</div>
+
+<div class="m-list-description">
+<dl class="m-list-description_list">
+<div class="m-list-description_item">
+<dt>コマンド例</dt>
+<dd><pre class="m-code-inline"><code>open</code></pre></dd>
+</div>
+</dl>
+</div>
+
+</section>
+
+<section class="m-section">
+
+<div class="m-heading-lv2" id="command">
+<h2 class="m-heading-lv2_text">コマンド一覧</h2>
+</div>
+
+<div class="m-paragraph">
+<p class="m-paragraph_text">Webpage assistantが応答できるメッセージは下記の5つです。<br>
+それ以外のメッセージはコマンドとして認識せず「アクションの実行に失敗しました。」というメッセージを返します。</p>
+</div>
+
+<div class="m-table">
+<table class="m-table_table">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>アクション</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>open</th>
+<td>ナビゲーションを開きます。<br>
+既にナビゲーションが開いている場合は、アクションを実行しません。</td>
+</tr>
+<tr>
+<th>close</th>
+<td>ナビゲーションを閉じます。<br>
+既にナビゲーションが閉じている場合は、アクションを実行しません。</td>
+</tr>
+<tr>
+<th>top</th>
+<td>ページ最上部までスクロールします。<br>
+既にページ最上部までスクロールしている場合は、アクションを実行しません。</td>
+</tr>
+<tr>
+<th>up</th>
+<td>上方向にスクロールします。<br>
+既にページ最上部までスクロールしている場合は、アクションを実行しません。</td>
+</tr>
+<tr>
+<th>down</th>
+<td>下方向にスクロールします。<br>
+既にページ最下部までスクロールしている場合は、アクションを実行しません。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section class="m-section">
+
+<div class="m-heading-lv2" id="environment">
+<h2 class="m-heading-lv2_text">動作環境</h2>
+</div>
+
+<div class="m-list-description">
+<dl class="m-list-description_list">
+<div class="m-list-description_item">
+<dt>ブラウザ</dt>
+<dd>Google Chrome 最新版</dd>
+</div>
+<div class="m-list-description_item">
+<dt>Node.js / npmの推奨バージョン</dt>
+<dd>16.x / 7.x</dd>
+</div>
+</dl>
+</div>
+
+</section>
+
+<template id="assistant-alert" class="js-alert-toast">
+<div class="alert-toast"></div>
+</template>
+
+<div class="m-navtop js-navtop">
+<a href="#top" class="m-navtop_link js-scroll"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="18.032" role="img" aria-labelledby="navtop-title"><title id="navtop-title">ページ最上部へ戻る</title><path d="M20.117 29.482a.889.889 0 101.257 1.257l7.11-7.11a.891.891 0 000-1.259l-7.11-7.11a.889.889 0 00-1.257 1.257l5.594 5.594H11.6a.889.889 0 100 1.778h14.111z" transform="rotate(-90 6.873 21.873)" /></svg></a>
+</div>
+
+</div>
+</main>
+
+<footer class="l-footer">
+<div class="l-footer_inner">
+<p class="footer-copyright"><small>©copyright text.</small></p>
+</div>
+</footer>
+
+</div>
+</body>
+</html>

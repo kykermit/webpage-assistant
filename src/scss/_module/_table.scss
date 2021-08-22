@@ -1,0 +1,45 @@
+@use '../_global';
+
+.m-table {
+  @extend %module-margin;
+
+  &_table {
+    width: 100%;
+
+    thead {
+
+      tr {
+
+        th {
+          font-weight: bold;
+          text-align: center;
+          background-color: global.$COLOR_TABLE_HEAD;
+        }
+      }
+    }
+
+    tbody {
+
+      tr {
+
+        th {
+          font-weight: bold;
+        }
+      }
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid global.$COLOR_BORDER;
+
+      &:first-child {
+        border-left-width: 0;
+      }
+
+      &:last-child {
+        border-right-width: 0;
+      }
+    }
+  }
+}

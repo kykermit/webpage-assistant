@@ -1,0 +1,85 @@
+@use '../_global';
+
+.m-list-bullet {
+  @extend %module-margin;
+
+  &_list {
+
+    > li {
+      display: flex;
+
+      &::before {
+        content: "";
+        width: .5em;
+        height: .5em;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: .65em;
+        background-color: global.$COLOR_TEXT;
+      }
+
+      > span {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.m-list-number {
+  @extend %module-margin;
+  counter-reset: number;
+
+  &_list {
+
+    > li {
+      counter-increment: number;
+      display: flex;
+
+      &::before {
+        content: counter(number) ". ";
+      }
+
+      > span {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.m-list-description {
+  @extend %module-margin;
+
+  &_list {
+
+    dt {
+      @include global.font-size(18);
+      font-weight: bold;
+    }
+
+    dd {
+      @extend %layout-inner;
+      margin-top: 5px;
+    }
+  }
+
+  &_item {
+
+    & + & {
+      margin-top: 10px;
+    }
+  }
+}
+
+.m-list-bullet,
+.m-list-number {
+
+  &_list {
+
+    > li {
+
+      + li {
+        margin-top: 10px;
+      }
+    }
+  }
+}

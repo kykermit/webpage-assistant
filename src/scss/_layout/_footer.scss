@@ -1,0 +1,11 @@
+@use '../_global';
+
+.l-footer {
+  @extend %layout-padding;
+  background-color: global.$COLOR_BACKGROUND_FOOTER;
+}
+
+.footer-copyright {
+  text-align: center;
+  color: global.$COLOR_TEXT_INVERSION;
+}

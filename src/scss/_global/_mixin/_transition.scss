@@ -1,0 +1,24 @@
+@use '../var';
+
+// transitionプロパティを一括設定
+// @param {String | List} $_properties     - transition-propertyプロパティの値（複数の場合は配列で）
+// @param {Number}        $_duration       - transition-durationプロパティの値（単位つき）
+// @param {String}        $_timingFunction - transition-timing-functionプロパティの値
+// @param {Number}        $_delay          - transition-delayプロパティの値（単位つき）
+// ---------------------------------------------------------------------------
+
+@mixin transition(
+  $_properties:      '',
+  $_duration:        var.$TRANSITION_DURATION,
+  $_timingFunction:  var.$TRANSITION_TIMING_FUNCTION,
+  $_delay:           null
+) {
+  $_transitionBind: ();
+
+  @each $_property in $_properties {
+    $_transition: unquote('#{$_property} #{$_duration} #{$_timingFunction} #{$_delay}');
+    $_transitionBind: append($_transitionBind, $_transition, comma);
+  }
+
+  transition: $_transitionBind;
+}

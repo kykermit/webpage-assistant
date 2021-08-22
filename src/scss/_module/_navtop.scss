@@ -1,0 +1,9 @@
+@use '../_global';
+
+.m-navtop {
+  @extend %module-margin;
+  position: sticky;
+  width: 16px;
+  margin-left: auto;
+  bottom: 25px;
+}

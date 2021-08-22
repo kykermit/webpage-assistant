@@ -1,0 +1,17 @@
+@use '_foundation';
+@use '_layout/page';
+@use '_layout/header';
+@use '_layout/nav';
+@use '_layout/main';
+@use '_layout/footer';
+@use '_module/navtop';
+@use '_module/section';
+@use '_module/heading';
+@use '_module/paragraph';
+@use '_module/note';
+@use '_module/list';
+@use '_module/table';
+@use '_module/code';
+@use '_script/slideNav';
+@use '_script/alertToast';
+@use '_script/navtop' as script-navtop;

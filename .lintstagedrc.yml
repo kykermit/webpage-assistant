@@ -1,0 +1,4 @@
+'src/**/*.scss':
+    - stylelint
+'src/**/*.ts':
+    - "eslint --ext ts"

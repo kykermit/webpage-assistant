@@ -1,0 +1,43 @@
+@use '../_global';
+
+.l-nav {
+  background-color: global.$COLOR_BACKGROUND_NAV;
+  border-right: 1px solid global.$COLOR_BORDER;
+
+  &_inner {
+    @extend %layout-padding;
+    @extend %layout-inner;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @include global.media-query(below) {
+    position: sticky;
+    top: 45px;
+  }
+
+  @include global.media-query {
+
+    &_inner {
+      position: sticky;
+      top: 45px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      width: 250px;
+      z-index: global.$Z-INDEX_NAV;
+    }
+  }
+}
+
+.nav-topic {
+
+  &_list {
+
+    > li {
+
+      + li {
+        margin-top: 15px;
+      }
+    }
+  }
+}
